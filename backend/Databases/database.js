@@ -1,12 +1,6 @@
 const dotenv = require('dotenv');
 require('dotenv').config()
 const mongoose = require('mongoose')
-//  import { MONGO_URL } from '../config';
-
-// mongoose.connect('mongodb+srv://mdsameransari45:smasher46@payupi.wbqeedi.mongodb.net/paytm');
-// import mongoose from "mongoose";
-// import { config as configDotenv } from "dotenv";
-// configDotenv()
   
 let MONGO_URL = process.env.MONGO_DB_URL;
     mongoose
