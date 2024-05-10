@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 require('dotenv').config()
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require("../config");
 const { User, Account } = require('../Databases/database');
 const {authMiddleware} = require('../middlewares/middleware');
 const { signupBody, signinBody, updateBody } = require('../validation/inputValidation');
@@ -54,7 +53,7 @@ router.post("/signup", async (req, res) => {
     //  create the token
     const token = jwt.sign({
         userId
-    }, JWT_SECRET);
+    }, process.env.JWT_SECRET);
     
     // return the response
     res.json({
@@ -87,7 +86,7 @@ router.post("/signin", async (req, res) => {
     if(user) {
         const token = jwt.sign({
             userId: user._id,
-        }, JWT_SECRET);
+        }, process.env.JWT_SECRET);
     //   sending the response
         res.json({
             message: "User Signin Successfully",
