@@ -35,7 +35,7 @@ export const Signin = () => {
                 navigate("/dashboard");
             }}
              label={"Sign In"}/>
-                 <BottomWarning label={"Don't have an account ?"} buttonText={"Signup"} to={"/signup"}/>
+                 <BottomWarning label={"Don't have an account ?"} buttonText={"Signup"} to={"/"}/>
                </div>           
         </div>
         </div>
